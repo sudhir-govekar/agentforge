@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "AgentForge"
+version = "0.1.0"
+description = "Development workspace for AgentForge"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["packages/agentforge-cli/tests"]
+addopts = "-ra"

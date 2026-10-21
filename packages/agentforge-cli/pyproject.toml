@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentforge"
+version = "0.1.0"
+description = "CLI for generating agentic AI applications"
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.15,<1.0",
+    "jinja2>=3.1,<4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3,<9.0",
+    "ruff>=0.11,<1.0",
+]
+
+[project.scripts]
+agentforge = "agentforge.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+agentforge = [
+    "templates/project/*",
+    "templates/project/.*",
+    "templates/project/**/*",
+    "templates/project/**/.*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
